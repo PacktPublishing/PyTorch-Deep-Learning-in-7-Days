@@ -10,6 +10,7 @@ and if you want GPU follow up with
 
 If all is well, you will see a listing of your video cards:
 
+```
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 415.25       Driver Version: 415.25       CUDA Version: 10.0     |
 |-------------------------------+----------------------+----------------------+
@@ -25,6 +26,7 @@ If all is well, you will see a listing of your video cards:
 |  GPU       PID   Type   Process name                             Usage      |
 |=============================================================================|
 +-----------------------------------------------------------------------------+
+```
 
 This is configured to run with `docker-compose`, so just start things up with
 
