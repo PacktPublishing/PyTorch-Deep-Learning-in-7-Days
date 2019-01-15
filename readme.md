@@ -32,5 +32,5 @@ This is configured to run with `docker-compose`, so just start things up with
 
 `docker-compose up`
 
-And then you can just go to (http://localhost:8888) to get started. All the notbook security is 
+And then you can just go to http://localhost:8888 to get started. All the notbook security is 
 switched off as this is packed up for learning purposes, one less thing to worry about.
