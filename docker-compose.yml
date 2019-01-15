@@ -1,0 +1,9 @@
+version: "3"
+services:
+  notebook:
+    build: ./
+    image: anaconda-pytorch-notebook
+    volumes:
+      - ./:/src
+    ports:
+      - "8888:8888"

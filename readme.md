@@ -1,0 +1,31 @@
+# Getting Started
+This is set up with scripts to run on Linus to install `docker`
+and `nvidia-docker` to allow GPU support.
+
+`sudo ./install-docker`
+
+and if you want GPU follow up with
+
+`sudo ./install-nvidia`
+
+If all is well, you will see a listing of your video cards:
+
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 415.25       Driver Version: 415.25       CUDA Version: 10.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  TITAN RTX           Off  | 00000000:03:00.0  On |                  N/A |
+| 41%   37C    P8     9W / 280W |   1036MiB / 24165MiB |     13%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
++-----------------------------------------------------------------------------+
+
+This is configured to run with `docker-compose`, so just start things up with
+
+`docker-compose up`
