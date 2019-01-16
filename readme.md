@@ -1,12 +1,14 @@
 # Getting Started
+
+## Linux
 This is set up with scripts to run on Linus to install `docker`
 and `nvidia-docker` to allow GPU support.
 
-`sudo ./install-docker`
+`sudo ./linux/install-docker`
 
 and if you want GPU follow up with
 
-`sudo ./install-nvidia`
+`sudo ./linux/install-nvidia`
 
 If all is well, you will see a listing of your video cards:
 
@@ -27,6 +29,15 @@ If all is well, you will see a listing of your video cards:
 |=============================================================================|
 +-----------------------------------------------------------------------------+
 ```
+
+## Mac
+
+Run this to use `brew` to get docker installed.
+
+`./mac/install-docker`
+
+
+# Running Notebooks
 
 This is configured to run with `docker-compose`, so just start things up with
 

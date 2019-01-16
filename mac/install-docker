@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# homebrew if you don't already have it
+which brew || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# docker goes on as a cask, it's a 'mac app bundle'
+brew cask install docker
+brew install docker-compose

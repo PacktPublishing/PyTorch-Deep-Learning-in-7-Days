@@ -1,4 +1,5 @@
-FROM debian:latest
+FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
+
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
@@ -23,4 +24,4 @@ WORKDIR /src
 EXPOSE 8888
 
 #this has security disabled which is less fuss for learning purposes
-CMD jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+CMD jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --NotebookApp.token='' --NotebookApp.disable_check_xsrf=True
