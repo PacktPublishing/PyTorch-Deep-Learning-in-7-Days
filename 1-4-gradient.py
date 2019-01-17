@@ -24,6 +24,7 @@
 # guessing, we use the gradient to figure how far off, and what
 # our next guess should be --= OK
 
+#%%
 import torch
 
 # X + 1 = 3 -- that's our little bit of algebra
