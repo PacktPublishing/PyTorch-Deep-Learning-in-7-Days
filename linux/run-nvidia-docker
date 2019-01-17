@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -x
+docker build --tag pytorch-gpu .
+docker run --runtime nvidia -p 8888:8888 --volume $(pwd):/src pytorch-gpu
