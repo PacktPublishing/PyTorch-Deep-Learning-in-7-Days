@@ -31,36 +31,40 @@ import torch
 # here is our random initial guess
 X = torch.rand(1, requires_grad=True)
 # and our formula
-yhat = X + 1.0
-yhat
+ONE = torch.tensor([1.0])
+THREE = torch.tensor([3.0])
+Y = X + ONE
+Y
 
 #%%
 # now, our loss is -- how far are we off from 3?
-loss = 3.0 - yhat
-loss
+def mse(Y):
+    diff = THREE - Y
+    return (diff * diff).sum() / 2
+
+#%%
+# the gradient on our X -- that tells us which direction
+# we are 'off' from the right answer -- let's look when we are too high
+loss = mse(Y)
+loss.backward()
+X.grad
 
 #%%
 # now -- let's use that gradient to solve some grade school
-# algebra
+# algebra with simple machine learning
 learning_rate = 1e-3
 # here is our learning loop
 for i in range(0, 10000):
-    yhat = X + torch.tensor([1.0])
-    loss = torch.tensor([3.0]) - yhat
+    Y = X + ONE
+    loss = mse(Y)
     # here is the 'backpropagation' of the gradient
     loss.backward()
     # and here is the 'learning', so we turn off the graidents
     # from being updated temporarily
     with torch.no_grad():
+        # the gradient tells you which direction you are off
+        # so you go in the opposite direction to correct the problem
         X -= learning_rate * X.grad
-        # and if we have no gradient left -- it has vanished
-        # we are done
-        if X.grad.sum() == 0:
-            print('gradient vanished', X.grad)
-            break
-        if loss.sum() < learning_rate:
-            print('no loss', loss)
-            break
         # and we zero out the gradients to get fresh values on 
         # each learning loop iteration
         X.grad.zero_()
