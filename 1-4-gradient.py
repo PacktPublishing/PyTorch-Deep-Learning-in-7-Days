@@ -31,15 +31,13 @@ import torch
 # here is our random initial guess
 X = torch.rand(1, requires_grad=True)
 # and our formula
-ONE = torch.tensor([1.0])
-THREE = torch.tensor([3.0])
-Y = X + ONE
+Y = X + 1.0
 Y
 
 #%%
 # now, our loss is -- how far are we off from 3?
 def mse(Y):
-    diff = THREE - Y
+    diff = 3.0 - Y
     return (diff * diff).sum() / 2
 
 #%%
@@ -55,7 +53,7 @@ X.grad
 learning_rate = 1e-3
 # here is our learning loop
 for i in range(0, 10000):
-    Y = X + ONE
+    Y = X + 1.0
     loss = mse(Y)
     # here is the 'backpropagation' of the gradient
     loss.backward()
