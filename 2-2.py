@@ -15,10 +15,12 @@ import torch
 inputs = torch.rand(1, 1, 64, 64)
 inputs
 
+#%%
 # outputs -- pretend we are building a binary classifier,
 # so we'll have to output possibilites, with a batch size of 1
 # we'll use randn again, so each thing can be a little bit
 # category 0 and a little bit category 1
+
 #%%
 outputs = torch.rand(1, 2)
 outputs
@@ -29,6 +31,8 @@ outputs
 # for this simple model, it's just tensors, no data wrangling 
 # now for a sequential network, let's do a simple multi
 # layer perceptron
+
+#%%
 model = torch.nn.Sequential(
     # input features are the size of one image
     # outputs are how many we have when done
@@ -38,10 +42,15 @@ model = torch.nn.Sequential(
     torch.nn.Linear(256, 256),
     torch.nn.Linear(256, 2),
 )
+
+#%%
 # and -- this isn't learning, we're just running our random
 # initialized linear network over our input
+
+#%%
 result = model(inputs)
 result, result.shape
 
+#%%
 # hmm -- that's not two convenient output labels, we have some
 # more work to do in the next videos -- but we have a model!
