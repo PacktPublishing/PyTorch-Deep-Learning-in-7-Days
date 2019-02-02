@@ -1,7 +1,6 @@
 #%%
 # Starting off, we need to import torch
 import torch
-import matplotlib.pyplot as plt
 
 #%%
 # here are the inputs and outputs from the last video
