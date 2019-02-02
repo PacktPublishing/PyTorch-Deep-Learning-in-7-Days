@@ -32,6 +32,16 @@ outputs
 # now for a sequential network, let's do a simple multi
 # layer perceptron
 
+
+#%%
+# now we start up a model with layers of linear -- these will
+# themselves have tensors inside filled with random numbers
+# these random numbers rae called parameters, and these 
+# parameters are the things that machine learning learns
+# basically -- the parameters -- sometimes called weights
+# are updated by learning algorithms, searching for the best
+# available answer
+
 #%%
 model = torch.nn.Sequential(
     # input features are the size of one image
