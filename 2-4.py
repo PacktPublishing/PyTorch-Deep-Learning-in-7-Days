@@ -29,7 +29,8 @@ test_results
 
 #%%
 # don't forget the loss function! the loss function is the
-# key driver to compute gradients
+# key driver to compute gradients, which are needed to drive
+# learning 
 
 #%%
 loss = torch.nn.MSELoss()(test_results, outputs)
