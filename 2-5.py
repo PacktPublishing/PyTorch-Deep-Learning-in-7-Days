@@ -3,7 +3,7 @@
 import torch
 
 #%%
-# now we'll create a model in the -- way that you are most likely
+# now we'll create a model in the way that you are most likely
 # going to use pytorch in practice, by creating a reusable model
 # module -- this is simply a class with layer member variables
 # and a forward method that does the actual computation

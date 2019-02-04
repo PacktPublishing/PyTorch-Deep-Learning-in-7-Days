@@ -5,6 +5,8 @@ import torch
 #%%
 # here are the inputs and outputs from the last video
 # as well as the model with activations
+
+#%%
 inputs = torch.rand(1, 1, 64, 64)
 outputs = torch.rand(1, 2)
 model = torch.nn.Sequential(

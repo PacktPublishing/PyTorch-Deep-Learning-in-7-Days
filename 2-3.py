@@ -1,11 +1,15 @@
 #%%
 # Starting off, we need to import torch
+
+#%%
 import torch
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 
 #%%
-# here are the inputs and outputs from the last video
+# here are the inputs and outputs from the last videoA
+
+#%%
 inputs = torch.rand(1, 1, 64, 64)
 outputs = torch.rand(1, 2)
 
@@ -13,12 +17,13 @@ outputs = torch.rand(1, 2)
 # here is our model from the last video -- notice everything is 
 # linear -- this limits what out model can learn, so we need
 # something else -- an activation function
+
+#%%
 model = torch.nn.Sequential(
     torch.nn.Linear(64, 256),
     torch.nn.Linear(256, 256),
     torch.nn.Linear(256, 2),
 )
-
 
 #%%
 # this is just about the simplest activation functional possible

@@ -32,6 +32,40 @@ class IrisDataset(Dataset):
 # here is a dataset loaded, with a single sample
 iris = IrisDataset()
 len(iris), iris[0]
+#%%
+# To do machine learning you need data, and there are three concepts
+# to master here, Dataset, Dataloader, and transforms
+
+#%%
+# Let's make use of pandas and CSV data to create a dataset.
+
+import torch
+import pandas
+from torch.utils.data import Dataset
+
+class IrisDataset(Dataset):
+
+    def __init__(self):
+        '''Load up the data.
+        '''
+        self.data = pandas.read_csv('./Iris.csv')
+
+    def __len__(self):
+        '''How much data do we have?
+        '''
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        '''Grab one data sample
+        
+        Arguments:
+            idx {int} -- data at this position.
+        '''
+        return self.data.iloc[idx]
+# pretty simple when we start from pandas
+# here is a dataset loaded, with a single sample
+iris = IrisDataset()
+len(iris), iris[0]
 
 #%%
 # Now, the small problem is -- we have a named tuple,

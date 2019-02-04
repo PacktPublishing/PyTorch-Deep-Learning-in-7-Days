@@ -2,15 +2,17 @@
 # Starting off, we need to import torch
 import torch
 
+#%%
 # this neural network will focus just on creating the network
 # and not on data or data loading, so we'll keep this simple and
 # build up the network step by step, in this first set of code
 # we'll work with dummy random inputs and outputs, and connect
 # them in a network
 
-
+#%%
 # inputs - -this is a 'batch' of size 1, with 1 color channel --
 # imagine this is greyscale, and 64x and 64y pixels
+
 #%%
 inputs = torch.rand(1, 1, 64, 64)
 inputs
@@ -18,7 +20,7 @@ inputs
 #%%
 # outputs -- pretend we are building a binary classifier,
 # so we'll have to output possibilites, with a batch size of 1
-# we'll use randn again, so each thing can be a little bit
+# we'll use rand again, so each thing can be a little bit
 # category 0 and a little bit category 1
 
 #%%
@@ -36,7 +38,7 @@ outputs
 #%%
 # now we start up a model with layers of linear -- these will
 # themselves have tensors inside filled with random numbers
-# these random numbers rae called parameters, and these 
+# these random numbers are called parameters, and these 
 # parameters are the things that machine learning learns
 # basically -- the parameters -- sometimes called weights
 # are updated by learning algorithms, searching for the best
