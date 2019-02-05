@@ -85,3 +85,5 @@ test[0]
 
 
 
+# embedding with eye to get one-hots? 
+# wrapping transforming dataset?
