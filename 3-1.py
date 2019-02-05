@@ -82,3 +82,6 @@ len(test), len(train)
 
 #%%
 test[0]
+
+
+
