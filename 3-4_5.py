@@ -173,3 +173,97 @@ houses[0]
 
 #%%
 # 3-5
+# The big differences for a regression network are in the output
+# rather than a softmax or a probability, we can simply emit a real valued
+# number
+# Depending on the model - this number isn't simply a 0-1, and in our case
+# we're looking to emit a price in dollars, so it'll be 6 figures.
+
+#%%
+class Model(torch.nn.Module):
+
+    def __init__(self, input_dimensions, size=256):
+        '''
+        The constructor is the place to set up each of the layers
+        and activations.
+        '''
+        super().__init__()
+        self.layer_one = torch.nn.Linear(input_dimensions, size)
+        self.activation_one = torch.nn.ReLU()
+        self.layer_two = torch.nn.Linear(size, size)
+        self.activation_two = torch.nn.ReLU()
+        self.shape_outputs = torch.nn.Linear(size, 1)
+
+    def forward(self, inputs):
+
+        buffer = self.layer_one(inputs)
+        buffer = self.activation_one(buffer)
+        buffer = self.layer_two(buffer)
+        buffer = self.activation_two(buffer)
+        buffer = self.shape_outputs(buffer)
+        return buffer
+
+model = Model(houses[0][0].shape[0], houses[0][1].shape[0])
+optimizer = torch.optim.Adam(model.parameters())
+loss_function = torch.nn.MSELoss()
+
+
+#%%
+# and now our training loop
+
+number_for_testing = int(len(houses) * 0.05)
+number_for_training = len(houses) - number_for_testing
+train, test = torch.utils.data.random_split(houses,
+    [number_for_training, number_for_testing])
+training = torch.utils.data.DataLoader(train, batch_size=16, shuffle=True)
+for epoch in range(16):
+    for inputs, outputs in training:
+        optimizer.zero_grad()
+        results = model(inputs)
+        loss = loss_function(results, outputs)
+        loss.backward()
+        optimizer.step()
+    print("Loss: {0}".format(loss))
+
+
+#%%
+# notice those loss numbers are large, since we are computing
+# loss in terms of dollars, and the error involves a square, you always
+# need to get a sense of error relative to your target numbers -- another
+# way to think of this would be to create a model that gives an output
+# on the range 0-1 and multiply that by the range of values you
+# see in the output say 0-1000000 for houses, but as you can see from these
+# outputs, our model seems plenty well able to learn with large number output
+
+# let's use our test data and see what we get
+
+#%%
+# here is our actual , and w
+actual = test[0][1]
+predicted = model(test[0][0])
+actual, predicted
+
+#%%
+# wow - that's pretty good for an quick eyeball check, let's 
+# take a look at the overall error for all our test data
+# for this we'll reach back to sklearn and use R^2, which gives a score
+# of 0-1, one being best, and is a standard method to judge the quality
+# of a regression model
+
+#%%
+import sklearn
+
+testing = torch.utils.data.DataLoader(test, batch_size=len(test), shuffle=False)
+for inputs, outputs in testing:
+    predicted = model(inputs).detach().numpy()
+    actual = outputs.numpy()
+    print(sklearn.metrics.r2_score(actual, predicted))
+
+
+#%%
+# pretty good, that's actually better than I expected when I started 
+# up this model -- turns out house prices are quite predictable
+# in this dataset -- I've actually seen this done for local housing prices
+# by some of my co workers when they were moving to maximize their
+# return and minimze their risk -- a pretty useful application if you 
+# can get some local MLS data and are planning a move!
