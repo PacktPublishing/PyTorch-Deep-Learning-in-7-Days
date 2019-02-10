@@ -1,6 +1,6 @@
 
 #%%
-# First, we'll need to load up a dataaset. Pandas is a great
+# First, we'll need to load up a dataset. Pandas is a great
 # tool to use to load csv data you may find, which we
 # will later turn into tensors. 
 # Let's start with the Dataset
@@ -69,9 +69,11 @@ shrooms[0]
 
 #%%
 # One more thing to think about -- testing and training data
-# we need some set of data samples we don't use in training to verify
-# that our model can generalize -- that it can make a classification
-# for an unseen sample and hasn't merely memorized the input data
+# we need some set of data samples we don't use in training to 
+# verify that our model can generalize -- 
+# that it can make a classification
+# for an unseen sample and hasn't merely 
+# memorized the input data
 
 #%%
 number_for_testing = int(len(shrooms) * 0.05)
@@ -82,8 +84,3 @@ len(test), len(train)
 
 #%%
 test[0]
-
-
-
-# embedding with eye to get one-hots? 
-# wrapping transforming dataset?
