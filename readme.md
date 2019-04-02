@@ -1,5 +1,5 @@
 # PyTorch Deep Learning in 7 Days[Video]
-This is the code repository for [PyTorch Deep Learning in 7 Days[Video]](https://www.packtpub.com), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
+This is the code repository for [PyTorch Deep Learning in 7 Days[Video]](https://prod.packtpub.com/in/big-data-and-business-intelligence/pytorch-deep-learning-7-days-video), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
 ## About the Video Course
 PyTorch is Facebook’s latest Python-based framework for Deep Learning. It has the ability to create dynamic Neural Networks on CPUs and GPUs, both with a significantly less code compared to other competing frameworks. PyTorch has a unique interface that makes it as easy to learn as NumPy.
 
