@@ -24,4 +24,4 @@ WORKDIR /src
 EXPOSE 8888
 
 #this has security disabled which is less fuss for learning purposes
-CMD jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --NotebookApp.token='' --NotebookApp.disable_check_xsrf=True
+CMD jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --NotebookApp.token='ignore' --NotebookApp.disable_check_xsrf=True --no-browser

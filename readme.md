@@ -66,8 +66,11 @@ This is configured to run with `docker-compose`, so just start things up with
 
 `docker-compose up`
 
-And then you can just go to http://localhost:8888 to get started. All the notbook security is 
-switched off as this is packed up for learning purposes, one less thing to worry about.
+And then you can just go to http://localhost:8888?token=ignore to get started. 
+Initially all the notbook security was switched off as this is packed up 
+for learning purposes, but because some Visual Code Studio / Jupyter 
+Notebook combinations don't allow for an empty token, 
+placeholder value: ?token=ignore was added to the url.
 
 
 ### Technical Requirements
