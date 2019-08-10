@@ -8,13 +8,13 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
 libglib2.0-0 libxext6 libsm6 libxrender1 \
 git mercurial subversion
 
-RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh -O ~/anaconda.sh && \
-/bin/bash ~/anaconda.sh -b -p /opt/conda && \
-rm ~/anaconda.sh && \
-ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
-echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-conda install pytorch torchvision cuda100 -c pytorch && \
-echo "conda activate base" >> ~/.bashrc
+RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh -O ~/anaconda.sh 
+RUN /bin/bash ~/anaconda.sh -b -p /opt/conda 
+RUN rm ~/anaconda.sh 
+RUN ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh 
+RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc 
+RUN conda install pytorch torchvision cuda100 -c pytorch 
+RUN echo "conda activate base" >> ~/.bashrc
 
 #all the code samples for the video series
 VOLUME ["/src"]
