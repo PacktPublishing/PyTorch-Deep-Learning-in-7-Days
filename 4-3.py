@@ -27,7 +27,7 @@ import torchvision.transforms as transforms
 
 transform = transforms.Compose(
     [transforms.ToTensor(),
-     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+     transforms.Normalize((0.5,), (0.5,))])
 
 train = torchvision.datasets.MNIST('./var', train=True, transform=transform)
 trainloader = torch.utils.data.DataLoader(train, batch_size=32, shuffle=True)
@@ -44,7 +44,7 @@ import torch.nn.functional as F
 
 class Net(nn.Module):
     def __init__(self):
-        super(Net, self).__init__()
+        super().__init__()
         # in channels, out channels (filters!), kernel size (square)
         # one channel -- this is greyscale
         self.conv1 = nn.Conv2d(1, 3, 3)
@@ -88,6 +88,8 @@ optimizer = optim.Adam(net.parameters())
 
 #%%
 for epoch in range(16):
+    print("Training epoch:", epoch)
+
     for inputs, outputs in trainloader:
         optimizer.zero_grad()
         results = net(inputs)
