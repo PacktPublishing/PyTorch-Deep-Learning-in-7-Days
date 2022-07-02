@@ -76,7 +76,7 @@ categorical = [
 # about in practice
 # any unique value in a sample isn't likely to generalize well,
 # there isn't
-# any data for the network to comapre. 
+# any data for the network to compare. 
 # Whether it is a unique keyword
 # or a unique number value, be on the lookout for these.
 
@@ -293,6 +293,6 @@ for inputs, outputs in testing:
 # for local housing prices
 # by some of my co workers when they were moving 
 # to maximize their
-# return and minimze their risk -- 
+# return and minimize their risk -- 
 # a pretty useful application if you 
 # can get some local MLS data and are planning a move!

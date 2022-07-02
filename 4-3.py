@@ -74,7 +74,7 @@ class Net(nn.Module):
 net = Net()
 #%%
 # loss functions, here we are using cross entropy loss, which
-# actuall does the softmax for us
+# actually does the softmax for us
 
 #%%
 import torch.optim as optim

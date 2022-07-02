@@ -5,7 +5,7 @@ import torch
 #%%
 # here is some iteration -- lowering the number
 # of hidden parameters until we no longer can get the
-# gradiens to vanish
+# gradients to vanish
 # this is a bit of dynamic model generation, which is 
 # a kind of meta-learning
 

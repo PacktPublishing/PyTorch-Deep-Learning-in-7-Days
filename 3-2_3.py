@@ -1,9 +1,9 @@
 
 
 #%%
-# When we have structured data, it is often cateogorical, meaning
+# When we have structured data, it is often categorical, meaning
 # a series of discrete values, often strings or ID numbers, that
-# are not intendted to be interpreted mathematically -- things
+# are not intended to be interpreted mathematically -- things
 # as simple as category labels, states, country names -- or
 # a numerical example -- postal codes are actually categorical
 
