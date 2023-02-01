@@ -26,8 +26,8 @@ test = torchvision.datasets.MNIST('./var', train=False, transform=transform)
 testloader = torch.utils.data.DataLoader(test, batch_size=len(test), shuffle=True)
 
 #%%
-# we can use use AlexNet -- it's built in to torchvisionm but we'll
-# modify it a bit for our smaller images and grayscale
+# we can use use AlexNet -- it's built in to torchvision but we'll
+# modify it a bit for our smaller images and greyscale
 
 #%%
 class SlimAlexNet(nn.Module):

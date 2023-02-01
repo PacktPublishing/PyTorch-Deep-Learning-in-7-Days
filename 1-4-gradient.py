@@ -1,11 +1,11 @@
 #%%
 # understanding gradients is a bit of math, but we'll try to keep this
-# simple -- bascially a numerical gradient tells you which direction
+# simple -- basically a numerical gradient tells you which direction
 # you need to move when you are machine learning -- positive or
 # negative -- and well as having an actual numerical value
 # that tells you 'how much' you should move
 
-# a machine learning loop takes the gradeients for a group
+# a machine learning loop takes the gradients for a group
 # of tensor operations, and then updates the value of the tensors
 # that are being 'learned' using the product of the gradients
 # and the learning rate
@@ -58,7 +58,7 @@ for i in range(0, 10000):
     loss = mse(Y)
     # here is the 'backpropagation' of the gradient
     loss.backward()
-    # and here is the 'learning', so we turn off the graidents
+    # and here is the 'learning', so we turn off the gradients
     # from being updated temporarily
     with torch.no_grad():
         # the gradient tells you which direction you are off

@@ -26,7 +26,7 @@ batch_averages.mean()
 #%% now just for kicks -- let's compute the average a bit by hand
 # notice that the overall average is different than the batch-wise
 # average -- this is normal something to think about when
-# maching learning with batch training
+# machine learning with batch training
 all_images = torch.cat([
     image for image, label in mnist
 ])

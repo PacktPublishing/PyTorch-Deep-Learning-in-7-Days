@@ -19,7 +19,7 @@ inputs
 
 #%%
 # outputs -- pretend we are building a binary classifier,
-# so we'll have to output possibilites, with a batch size of 1
+# so we'll have to output possibilities, with a batch size of 1
 # we'll use rand again, so each thing can be a little bit
 # category 0 and a little bit category 1
 
@@ -48,7 +48,7 @@ outputs
 model = torch.nn.Sequential(
     # input features are the size of one image
     # outputs are how many we have when done
-    # the 64 has to 'match' the final dimnension of the input
+    # the 64 has to 'match' the final dimension of the input
     # try changing it to another number to see errors!
     torch.nn.Linear(64, 256),
     torch.nn.Linear(256, 256),
